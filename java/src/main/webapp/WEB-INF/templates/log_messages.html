@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="content" class="row">
+	
+		<div id="timeRange" class="tab-full-column">
+            <label class="tab-field-label" for="field">Start Time (MM/dd/yyyy HH:mm:ss)</label> 
+            <input class=" tab-field" id="field" type="text"
+                name="field" data-bind="value: startLogTime"></input>
+		</div>
+
+        <div class="row" id="messagesDiv">
+            <div class="tab-full-column">
+
+                <h4 class="title">Log Messages</h4>
+                <div style="margin-top: 5px; margin-left: 5px;">
+                    <button class="mz-button secondary"
+                        data-bind="click:showLogMessages">Latest</button>
+                    <button class="mz-button secondary"
+                        data-bind="click:prevLogMessages">Prev</button>
+                    <button class="mz-button secondary"
+                        data-bind="click:nextLogMessages">Next</button>
+                </div>
+                <div data-bind='simpleGrid: logGridViewModel'></div>
+            </div>
+        </div>
+
+	</div>
+</body>
+</html>
